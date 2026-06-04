@@ -12,14 +12,14 @@ export default function Home() {
     // ── Exactly mirrors the original DOMContentLoaded script ──────────────
 
     // 1. HERO ANIMATION
-    const heroTl = gsap.timeline({ delay: 0.2 });
+    const heroTl = gsap.timeline({ delay: 0.05 });
 
     gsap.set(".hero-anim", { y: 100, opacity: 0 });
     gsap.set(".hero-fade", { opacity: 0, y: 20 });
 
     heroTl
-      .to(".hero-anim", { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: "power4.out" })
-      .to(".hero-fade", { opacity: 1, y: 0, duration: 1, ease: "power2.out" }, "-=0.6");
+      .to(".hero-anim", { y: 0, opacity: 1, duration: 0.65, stagger: 0.06, ease: "power3.out" })
+      .to(".hero-fade", { opacity: 1, y: 0, duration: 0.55, ease: "power2.out" }, "-=0.3");
 
     // Parallax orbs
     gsap.to("#hero-orb-1", {
@@ -35,22 +35,22 @@ export default function Home() {
 
     // 2. PROBLEM SECTION
     gsap.to(".problem-text-content", {
-      scrollTrigger: { trigger: "#problem-section", start: "top 70%" },
-      opacity: 1, y: 0, duration: 1, ease: "power3.out",
+      scrollTrigger: { trigger: "#problem-section", start: "top 85%", once: true },
+      opacity: 1, y: 0, duration: 0.55, ease: "power3.out",
     });
     gsap.to(".data-card", {
-      scrollTrigger: { trigger: "#problem-section", start: "top 50%" },
-      y: 0, opacity: 1, duration: 1.2, stagger: 0.3, ease: "expo.out",
+      scrollTrigger: { trigger: "#problem-section", start: "top 78%", once: true },
+      y: 0, opacity: 1, duration: 0.65, stagger: 0.08, ease: "power3.out",
     });
 
     // 3. SOLUTION SECTION
     const solTl = gsap.timeline({
-      scrollTrigger: { trigger: "#solution-section", start: "top 50%" },
+      scrollTrigger: { trigger: "#solution-section", start: "top 82%", once: true },
     });
     solTl
-      .to(".sol-title, .sol-sub", { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" })
-      .to("#animated-path", { strokeDashoffset: 0, duration: 2, ease: "power2.inOut" }, "-=0.5")
-      .to(".flow-node", { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.5)" }, "-=1.5");
+      .to(".sol-title, .sol-sub", { y: 0, opacity: 1, duration: 0.55, stagger: 0.08, ease: "power3.out" })
+      .to("#animated-path", { strokeDashoffset: 0, duration: 0.75, ease: "power2.out" }, "-=0.25")
+      .to(".flow-node", { y: 0, opacity: 1, duration: 0.45, stagger: 0.07, ease: "back.out(1.4)" }, "-=0.45");
 
     // 4. SYSTEM BREAKDOWN
     gsap.utils.toArray(".sys-step").forEach((step) => {
@@ -64,34 +64,34 @@ export default function Home() {
       });
 
       ScrollTrigger.create({
-        trigger: step, start: "top 50%", end: "bottom 40%",
+        trigger: step, start: "top 75%", end: "bottom 40%",
         onEnter: () => {
-          gsap.to(content, { opacity: 1, duration: 0.5 });
-          gsap.to(dot, { backgroundColor: "#00F5FF", borderColor: "#00F5FF", boxShadow: "0 0 10px rgba(0,245,255,0.6)", duration: 0.3 });
+          gsap.to(content, { opacity: 1, duration: 0.25 });
+          gsap.to(dot, { backgroundColor: "#00F5FF", borderColor: "#00F5FF", boxShadow: "0 0 10px rgba(0,245,255,0.6)", duration: 0.18 });
         },
         onLeaveBack: () => {
-          gsap.to(content, { opacity: 0.3, duration: 0.5 });
-          gsap.to(dot, { backgroundColor: "#050505", borderColor: "rgba(255,255,255,0.2)", boxShadow: "none", duration: 0.3 });
+          gsap.to(content, { opacity: 0.3, duration: 0.2 });
+          gsap.to(dot, { backgroundColor: "#050505", borderColor: "rgba(255,255,255,0.2)", boxShadow: "none", duration: 0.18 });
         },
       });
     });
 
     // 5. METRICS SECTION
     gsap.from(gsap.utils.toArray(".stat-block"), {
-      scrollTrigger: { trigger: ".stat-block", start: "top 80%" },
-      y: 40, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out",
+      scrollTrigger: { trigger: ".stat-block", start: "top 88%", once: true },
+      y: 28, opacity: 0, duration: 0.5, stagger: 0.06, ease: "power3.out",
       onComplete: () => {
         document.querySelectorAll(".counter").forEach((counter) => {
           const target = +counter.getAttribute("data-target");
-          gsap.to(counter, { innerHTML: target, duration: 2.5, snap: { innerHTML: 1 }, ease: "expo.out" });
+          gsap.to(counter, { innerHTML: target, duration: 0.9, snap: { innerHTML: 1 }, ease: "power2.out" });
         });
       },
     });
 
     // 6. WEBINAR SECTION
     gsap.from(".web-anim", {
-      scrollTrigger: { trigger: ".web-anim", start: "top 85%" },
-      y: 40, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out",
+      scrollTrigger: { trigger: ".web-anim", start: "top 90%", once: true },
+      y: 28, opacity: 0, duration: 0.5, stagger: 0.07, ease: "power3.out",
     });
 
     // 7. MOUSE-TRACKING GLOW CARDS
@@ -296,7 +296,7 @@ export default function Home() {
                   <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10"></div>
                   <div className="step-line absolute left-0 top-0 h-0 w-[2px] bg-primary shadow-[0_0_10px_rgba(0,245,255,0.8)]"></div>
                   <div className="absolute left-[-5px] top-0 w-3 h-3 rounded-full bg-background border border-white/20 step-dot"></div>
-                  <div className="opacity-30 transition-opacity duration-700 step-content">
+                  <div className="opacity-30 transition-opacity duration-300 step-content">
                     <span className="font-mono text-sm text-primary mb-4 block">// Phase {step.phase}</span>
                     <h3 className="text-3xl font-headline font-medium text-white mb-6">{step.title}</h3>
                     <p className="text-lg text-text-muted font-light leading-relaxed mb-8 max-w-xl">{step.body}</p>

@@ -394,7 +394,7 @@ const categories = [
 function SinglePlanLayout({ plan, active }) {
   const includedCount = plan.features.filter(f => f.included).length;
   return (
-    <div className="anim-card glow-card glass-panel-accent rounded-2xl border border-primary/20 overflow-hidden mb-8"
+    <div className={`anim-card glow-card ${active.accentClass === "text-secondary" ? "glass-panel-accent-secondary" : "glass-panel-accent"} rounded-2xl border border-primary/20 overflow-hidden mb-8`}
       style={{ borderTopColor: active.accentClass === "text-secondary" ? "rgba(138,43,226,0.6)" : "rgba(0,245,255,0.6)", borderTopWidth: "2px" }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -449,8 +449,7 @@ function SinglePlanLayout({ plan, active }) {
               Get Started
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </span>
-            <div className={`absolute inset-0 border ${active.borderClass} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-            <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </Link>
 
           <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest text-center">
@@ -482,17 +481,38 @@ function SinglePlanLayout({ plan, active }) {
 // ── PLAN CARD (used for 2-plan tabs like Funnels) ─────────────────────────
 function PlanCard({ plan, active }) {
   const isHighlighted = plan.highlighted;
+  const isPackagePlan = active.id === "packages";
+  const usePurpleAccent = active.accentClass === "text-secondary" || active.id === "funnels";
+  const cardBorderClass = usePurpleAccent ? "border-secondary/40" : active.borderClass;
+  const cardBgClass = usePurpleAccent ? "bg-secondary/10" : active.bgClass;
+  const cardAccentClass = usePurpleAccent ? "text-secondary" : active.accentClass;
+  const cardGlowClass = active.accentClass === "text-secondary"
+    ? active.glowClass
+    : usePurpleAccent
+      ? "shadow-[0_0_60px_rgba(138,43,226,0.12)]"
+      : active.glowClass;
+  const pillScale = 1;
+  const pillTextScale = 1 / pillScale;
+
   return (
     <div
-      className={`relative rounded-2xl flex flex-col overflow-hidden anim-card glow-card transition-transform duration-300 hover:-translate-y-1
+      className={`pricing-plan-card relative rounded-2xl flex flex-col h-full overflow-hidden anim-card glow-card transition-transform duration-300 hover:-translate-y-1
         ${isHighlighted
-          ? `glass-panel-accent border-t-2 ${active.borderClass} ${active.glowClass}`
+          ? `${usePurpleAccent ? "glass-panel-accent-secondary" : "glass-panel-accent"} border-t-2 ${cardBorderClass} ${cardGlowClass}`
           : "glass-panel border border-white/5"
         }`}
     >
       {plan.recommended && (
-        <div className={`absolute top-0 right-0 ${active.bgClass} border-b border-l ${active.borderClass} px-4 py-1.5 rounded-bl-xl`}>
-          <span className={`font-mono text-[9px] ${active.accentClass} uppercase tracking-widest`}>Recommended</span>
+        <div
+          className={`absolute top-0 left-1/2 ${cardBgClass} border-b border-l border-r ${cardBorderClass} px-4 py-1.5 rounded-bl-xl rounded-br-xl`}
+          style={{ transform: `translateX(-50%) scaleX(${pillScale})`, transformOrigin: "top center" }}
+        >
+          <span
+            className={`font-mono text-[9px] ${cardAccentClass} uppercase tracking-widest`}
+            style={{ transform: `scaleX(${pillTextScale})`, display: "inline-block" }}
+          >
+            Recommended
+          </span>
         </div>
       )}
 
@@ -544,11 +564,13 @@ function PlanCard({ plan, active }) {
         )}
 
         {plan.monthly && (
-          <div className="mb-8 rounded-xl border border-white/5 bg-white/[0.03] p-5">
+          <div className={`mb-8 rounded-xl border border-white/5 bg-white/[0.03] p-5 flex flex-col ${isPackagePlan ? "min-h-[21rem]" : ""}`}>
             <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest mb-3">Monthly Management</p>
-            <div className={`font-headline text-xl font-medium leading-tight ${isHighlighted ? active.accentClass : "text-white"}`}>{plan.monthly.price}</div>
-            <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest mt-1 mb-4">{plan.monthly.period}</p>
-            <ul className="space-y-3">
+            <div className={isPackagePlan ? "min-h-[4.5rem]" : ""}>
+              <div className={`font-headline text-xl font-medium leading-tight ${isHighlighted ? active.accentClass : "text-white"}`}>{plan.monthly.price}</div>
+              <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest mt-1 mb-4">{plan.monthly.period}</p>
+            </div>
+            <ul className="space-y-3 flex-grow">
               {plan.monthly.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className={`material-symbols-outlined text-sm mt-0.5 flex-shrink-0 ${isHighlighted ? active.accentClass : "text-text-muted"}`}>check_circle</span>
@@ -574,8 +596,7 @@ function PlanCard({ plan, active }) {
           </span>
           {isHighlighted && (
             <>
-              <div className="absolute inset-0 border border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </>
           )}
         </Link>
@@ -585,9 +606,9 @@ function PlanCard({ plan, active }) {
 }
 
 // ── MAINTENANCE CARD ──────────────────────────────────────────────────────
-function MaintenanceCard({ data, accentClass, borderClass, bgClass }) {
+function MaintenanceCard({ data, accentClass, borderClass, bgClass, panelClass = "glass-panel" }) {
   return (
-    <div className={`glass-panel glow-card anim-card rounded-2xl border-t-2 ${borderClass} overflow-hidden`}
+    <div className={`${panelClass} glow-card anim-card rounded-2xl border-t-2 ${borderClass} overflow-hidden`}
       style={{ borderTopWidth: "2px" }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-3">
@@ -635,8 +656,7 @@ function MaintenanceCard({ data, accentClass, borderClass, bgClass }) {
                 Enquire Now
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </span>
-              <div className={`absolute inset-0 border ${borderClass} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Link>
             <p className="font-mono text-[9px] text-text-dim text-center uppercase tracking-widest">
               {data.note || "Minimum 3 months · billed in advance"}
@@ -657,6 +677,11 @@ export default function Pricing() {
   const maintenancePlans = active.maintenance
     ? Array.isArray(active.maintenance) ? active.maintenance : [active.maintenance]
     : [];
+  const usePurpleAccent = active.accentClass === "text-secondary" || active.id === "funnels";
+  const retainerAccentClass = usePurpleAccent ? "text-secondary" : active.accentClass;
+  const retainerBorderClass = usePurpleAccent ? "border-secondary/40" : active.borderClass;
+  const retainerBgClass = usePurpleAccent ? "bg-secondary/10" : active.bgClass;
+  const retainerPanelClass = usePurpleAccent ? "glass-panel-accent-secondary" : "glass-panel";
 
   useEffect(() => {
     ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -813,8 +838,8 @@ export default function Pricing() {
         {maintenancePlans.length > 0 && (
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className={`w-8 h-8 rounded-lg ${active.bgClass} border ${active.borderClass} flex items-center justify-center flex-shrink-0`}>
-                <span className={`material-symbols-outlined text-sm ${active.accentClass}`}>autorenew</span>
+              <div className={`w-8 h-8 rounded-lg ${retainerBgClass} border ${retainerBorderClass} flex items-center justify-center flex-shrink-0`}>
+                <span className={`material-symbols-outlined text-sm ${retainerAccentClass}`}>autorenew</span>
               </div>
               <div>
                 <p className="font-headline text-lg font-medium text-white">
@@ -828,9 +853,10 @@ export default function Pricing() {
                 <MaintenanceCard
                   key={i}
                   data={plan}
-                  accentClass={active.accentClass}
-                  borderClass={active.borderClass}
-                  bgClass={active.bgClass}
+                  accentClass={retainerAccentClass}
+                  borderClass={retainerBorderClass}
+                  bgClass={retainerBgClass}
+                  panelClass={retainerPanelClass}
                 />
               ))}
             </div>
@@ -893,8 +919,7 @@ export default function Pricing() {
               Join Free Webinar
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </span>
-            <div className="absolute inset-0 border border-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </Link>
         </div>
 
