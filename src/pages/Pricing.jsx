@@ -18,59 +18,75 @@ const categories = [
     glowClass: "shadow-[0_0_60px_rgba(0,245,255,0.08)]",
     plans: [
       {
-        name: "Core System",
-        tag: "Basic Funnel",
+        name: "Growth Funnel",
+        tag: "Funnel Creation",
         tagColor: "text-text-dim",
         highlighted: false,
         price: "₹9,997",
-        period: "one-time",
+        period: "one-time setup",
+        description: "Designed to nurture leads through multiple stages and increase conversion opportunities.",
+        bestFor: "Agencies · Coaches · Consultants · Education · Healthcare",
+        delivery: "5–7 Working Days",
         features: [
-          { text: "Landing Page Design & Build", included: true },
-          { text: "Lead CRM Integration", included: true },
-          { text: "15-Day Email Automation Sequence", included: true },
-          { text: "7 WABA WhatsApp Messages", included: true },
-          { text: "7 Custom Facebook Creatives", included: true },
-          { text: "A/B Testing", included: false },
-          { text: "Priority Support", included: false },
+          { text: "Multi-Step Funnel", included: true },
+          { text: "Lead Qualification", included: true },
+          { text: "Calendar Booking", included: true },
+          { text: "CRM Pipeline Setup", included: true },
+          { text: "Multi-Stage Email Automation", included: true },
+          { text: "Multi-Stage WhatsApp Automation", included: true },
+          { text: "Lead Scoring", included: true },
+          { text: "Follow-Up Workflows", included: true },
+          { text: "Conversion Tracking", included: true },
+          { text: "Sales Pipeline Visibility", included: true },
         ],
       },
       {
-        name: "Growth Engine",
+        name: "Scale Funnel",
         tag: "Advanced Funnel",
         tagColor: "text-primary",
         highlighted: true,
         recommended: true,
-        price: "₹24,997",
-        period: "one-time",
+        price: "₹19,997",
+        period: "one-time setup",
+        description: "A complete sales and automation ecosystem designed for businesses focused on growth and scale.",
+        bestFor: "Real Estate · Healthcare · Education · High-Ticket Businesses · Scaling Companies",
+        delivery: "7–10 Working Days",
         features: [
-          { text: "High-Converting Landing Page", included: true },
-          { text: "Advanced Lead CRM Setup", included: true },
-          { text: "30-Day Email Automation Sequence", included: true },
-          { text: "14 WABA WhatsApp Messages", included: true },
-          { text: "14 Custom Facebook Creatives", included: true },
-          { text: "A/B Testing (2 variants)", included: true },
-          { text: "Priority Support", included: false },
+          { text: "Advanced Funnel Architecture", included: true },
+          { text: "Customer Journey Mapping", included: true },
+          { text: "CRM Architecture", included: true },
+          { text: "Appointment Booking System", included: true },
+          { text: "Advanced Email Automation", included: true },
+          { text: "Advanced WhatsApp Automation", included: true },
+          { text: "Lead Segmentation", included: true },
+          { text: "Re-Engagement Campaigns", included: true },
+          { text: "Pipeline Management", included: true },
+          { text: "Reporting Dashboard", included: true },
+          { text: "Conversion Analytics", included: true },
         ],
       },
     ],
     maintenance: {
-      name: "Funnel Maintenance",
+      name: "Funnel Growth Care",
       icon: "build",
-      desc: "Keep your funnel optimised, updated, and converting month after month.",
-      price: "₹15,000",
+      desc: "Ongoing funnel, automation, and CRM care to keep the lead journey improving every month.",
+      price: "₹9,997",
       period: "/ month",
       perks: [
-        "Monthly performance audit & report",
-        "Landing page copy & design tweaks",
-        "Email sequence optimisation",
-        "CRM health checks & cleanup",
-        "Conversion rate monitoring",
+        "Funnel Updates",
+        "Automation Maintenance",
+        "CRM Optimization",
+        "Workflow Improvements",
+        "Lead Journey Enhancements",
+        "Reporting Dashboard",
+        "Performance Monitoring",
+        "Conversion Improvement Suggestions",
       ],
     },
   },
   {
-    id: "facebook",
-    label: "Facebook Ads",
+    id: "meta",
+    label: "Meta Ads",
     icon: "campaign",
     accentColor: "primary",
     accentClass: "text-primary",
@@ -79,37 +95,43 @@ const categories = [
     glowClass: "shadow-[0_0_60px_rgba(0,245,255,0.08)]",
     plans: [
       {
-        name: "Ad Creation Pack",
-        tag: "One-Time Creation",
+        name: "Meta Ads Setup",
+        tag: "Facebook & Instagram",
         tagColor: "text-primary",
         highlighted: true,
-        price: "₹20,000",
-        period: "one-time",
+        price: "₹9,997",
+        period: "one-time setup",
+        bestFor: "Local Businesses · Service Providers · Clinics · Real Estate · Coaches & Consultants · Education",
+        delivery: "3–5 Working Days",
         features: [
-          { text: "Full Campaign Strategy & Architecture", included: true },
-          { text: "Audience Research & Targeting Setup", included: true },
-          { text: "6 Ad Creatives — 4 Static + 2 Video", included: true },
-          { text: "Facebook Pixel + Conversion API Setup", included: true },
-          { text: "Persuasive Ad Copywriting for All Ads", included: true },
-          { text: "Retargeting Audiences Setup", included: true },
-          { text: "Campaign Launch & Initial Configuration", included: true },
+          { text: "Meta Business Manager Setup", included: true },
+          { text: "Pixel Installation", included: true },
+          { text: "Conversion Event Tracking", included: true },
+          { text: "Audience Research", included: true },
+          { text: "Campaign Structure Setup", included: true },
+          { text: "Ad Copy Assistance", included: true },
+          { text: "Campaign Launch", included: true },
+          { text: "CRM Integration", included: true },
+          { text: "Lead Tracking Setup", included: true },
+          { text: "Basic Reporting Configuration", included: true },
         ],
       },
     ],
     maintenance: {
-      name: "Facebook Ads Management",
+      name: "Meta Ads Management",
       icon: "manage_accounts",
-      desc: "Fresh creatives every fortnight + hands-on optimisation to keep your campaigns profitable.",
-      price: "₹27,000 or 20% of ad budget",
-      period: "/ month  (whichever is higher)",
+      desc: "Monthly campaign management for Meta campaigns with tracking, optimization, and performance reviews.",
+      price: "₹19,997/mo or 20% of ad spend",
+      period: "(whichever is higher)",
       perks: [
-        "₹20,000 — ads management fee",
-        "₹7,000 — Arkquen CRM subscription",
-        "2–3 new video creatives every 2 weeks",
-        "Weekly performance review & reporting",
-        "Continuous A/B creative testing",
-        "Budget scaling & bid optimisation",
-        "New audience exploration monthly",
+        "Campaign Monitoring",
+        "Audience Optimization",
+        "Budget Optimization",
+        "Retargeting Campaigns",
+        "Lead Tracking",
+        "Monthly Reporting",
+        "Performance Reviews",
+        "Strategy Recommendations",
       ],
     },
   },
@@ -124,37 +146,42 @@ const categories = [
     glowClass: "shadow-[0_0_60px_rgba(138,43,226,0.08)]",
     plans: [
       {
-        name: "Search Launch Pack",
-        tag: "One-Time Creation",
+        name: "Google Ads Setup",
+        tag: "Search Campaign Setup",
         tagColor: "text-secondary",
         highlighted: true,
-        price: "₹30,000",
-        period: "one-time",
+        price: "₹19,997",
+        period: "one-time setup",
+        bestFor: "Search Traffic · High-Intent Lead Generation · Local Service Businesses · B2B Companies",
+        delivery: "5–7 Working Days",
         features: [
-          { text: "In-depth Keyword Research & Strategy", included: true },
-          { text: "Search + Performance Max Campaign Build", included: true },
-          { text: "Ad Copywriting (6 variations)", included: true },
-          { text: "Full Conversion & Call Tracking Setup", included: true },
-          { text: "Negative Keyword Sculpting", included: true },
-          { text: "Display & Remarketing Campaign", included: true },
-          { text: "Campaign Launch & Initial Configuration", included: true },
+          { text: "Google Ads Account Setup", included: true },
+          { text: "Keyword Research", included: true },
+          { text: "Competitor Analysis", included: true },
+          { text: "Search Campaign Setup", included: true },
+          { text: "Conversion Tracking", included: true },
+          { text: "Call Tracking Setup", included: true },
+          { text: "Analytics Integration", included: true },
+          { text: "Landing Page Integration", included: true },
+          { text: "Campaign Launch", included: true },
         ],
       },
     ],
     maintenance: {
       name: "Google Ads Management",
       icon: "query_stats",
-      desc: "Active campaign management to lower your cost-per-click and raise conversions every month.",
-      price: "₹37,000 or 20% of ad budget",
-      period: "/ month  (whichever is higher)",
+      desc: "Monthly optimization for search campaigns, bids, keywords, conversions, and growth recommendations.",
+      price: "₹29,997/mo or 20% of ad spend",
+      period: "(whichever is higher)",
       perks: [
-        "₹30,000 — ads management fee",
-        "₹7,000 — Arkquen CRM subscription",
-        "Weekly bid & budget optimisation",
-        "Monthly keyword expansion & pruning",
-        "Ad copy split-testing",
-        "Quality score improvement",
-        "Monthly performance report",
+        "Keyword Optimization",
+        "Bid Optimization",
+        "Search Term Analysis",
+        "Conversion Optimization",
+        "Negative Keyword Updates",
+        "Performance Reporting",
+        "Monthly Reviews",
+        "Growth Recommendations",
       ],
     },
   },
@@ -169,37 +196,197 @@ const categories = [
     glowClass: "shadow-[0_0_60px_rgba(0,245,255,0.08)]",
     plans: [
       {
-        name: "Play Card Site",
-        tag: "Full Website Build",
+        name: "Business Presence Website",
+        tag: "Credibility Website",
+        tagColor: "text-text-dim",
+        highlighted: false,
+        price: "₹14,997",
+        period: "one-time setup",
+        description: "A professional website that establishes credibility and makes it easy for prospects to contact you.",
+        delivery: "5–7 Working Days",
+        features: [
+          { text: "Up to 5 Pages", included: true },
+          { text: "Mobile Responsive Design", included: true },
+          { text: "Contact Forms", included: true },
+          { text: "WhatsApp Integration", included: true },
+          { text: "Basic SEO Setup", included: true },
+          { text: "SSL Security", included: true },
+          { text: "Speed Optimization", included: true },
+          { text: "Lead Enquiry Forms", included: true },
+        ],
+      },
+      {
+        name: "Growth Website",
+        tag: "Lead Generation Website",
         tagColor: "text-primary",
         highlighted: true,
-        price: "₹49,997",
-        period: "one-time",
+        recommended: true,
+        price: "₹29,997",
+        period: "one-time setup",
+        description: "A lead-generation-focused website designed to convert visitors into enquiries and appointments.",
+        delivery: "7–14 Working Days",
         features: [
-          { text: "Bespoke UI/UX Design", included: true },
-          { text: "Mobile Responsive & Fast", included: true },
-          { text: "Custom Animations & Interactions", included: true },
-          { text: "Full SEO & Schema Markup", included: true },
-          { text: "Lead Capture & CRM Integration", included: true },
-          { text: "Contact Forms & WhatsApp Integration", included: true },
-          { text: "3 Months Free Maintenance Included", included: true },
+          { text: "Up to 15 Pages", included: true },
+          { text: "Blog Setup", included: true },
+          { text: "CRM Integration", included: true },
+          { text: "Lead Capture Forms", included: true },
+          { text: "Analytics Integration", included: true },
+          { text: "SEO Foundation", included: true },
+          { text: "Mobile Optimization", included: true },
+          { text: "Conversion-Focused Design", included: true },
+          { text: "Speed Optimization", included: true },
+          { text: "Strategic CTAs", included: true },
+        ],
+      },
+      {
+        name: "Enterprise Growth Website",
+        tag: "Advanced Platform",
+        tagColor: "text-primary",
+        highlighted: false,
+        price: "₹49,997",
+        period: "one-time setup",
+        description: "A complete digital business platform with advanced automation and integrations.",
+        delivery: "14–21 Working Days",
+        features: [
+          { text: "Custom Design", included: true },
+          { text: "Unlimited Core Pages", included: true },
+          { text: "Advanced Integrations", included: true },
+          { text: "Automation Workflows", included: true },
+          { text: "CRM Connectivity", included: true },
+          { text: "Analytics Setup", included: true },
+          { text: "SEO Foundation", included: true },
+          { text: "Conversion Tracking", included: true },
+          { text: "Lead Management Integration", included: true },
+          { text: "Performance Optimization", included: true },
         ],
       },
     ],
-    maintenance: {
-      name: "Website Maintenance",
-      icon: "health_and_safety",
-      desc: "Keep your site fast, secure, and up to date — we handle everything technical.",
-      price: "₹9,997",
-      period: "/ month",
-      perks: [
-        "Content updates & page edits",
-        "Security patches & plugin updates",
-        "Uptime monitoring & backups",
-        "Performance & Core Web Vitals tuning",
-        "Monthly analytics report",
-      ],
-    },
+    maintenance: [
+      {
+        name: "Essential Website Care",
+        icon: "health_and_safety",
+        desc: "Essential technical care for content, security, plugins, and support.",
+        price: "₹4,997",
+        period: "/ month",
+        perks: [
+          "Security Monitoring",
+          "Content Updates",
+          "Plugin Updates",
+          "Performance Monitoring",
+          "Minor Design Changes",
+          "Technical Support",
+        ],
+      },
+      {
+        name: "Growth Website Care",
+        icon: "workspace_premium",
+        desc: "Priority support and conversion-focused website improvements for growing businesses.",
+        price: "₹9,997",
+        period: "/ month",
+        perks: [
+          "Priority Support",
+          "Monthly Content Updates",
+          "Landing Page Creation",
+          "Conversion Optimization",
+          "Technical Improvements",
+          "Security Monitoring",
+          "Performance Enhancements",
+          "Strategic Recommendations",
+        ],
+      },
+    ],
+  },
+  {
+    id: "packages",
+    label: "Packages",
+    icon: "hub",
+    accentColor: "secondary",
+    accentClass: "text-secondary",
+    borderClass: "border-secondary/40",
+    bgClass: "bg-secondary/10",
+    glowClass: "shadow-[0_0_60px_rgba(138,43,226,0.08)]",
+    plans: [
+      {
+        name: "Meta Ads + Funnel",
+        tag: "Growth System Package",
+        tagColor: "text-secondary",
+        highlighted: false,
+        price: "₹19,997",
+        period: "one-time setup",
+        features: [
+          { text: "Meta Ads Setup", included: true },
+          { text: "Scale Funnel", included: true },
+          { text: "CRM Integration", included: true },
+          { text: "Lead Tracking Setup", included: true },
+          { text: "Basic Automation", included: true },
+        ],
+        monthly: {
+          price: "₹24,997/mo or 20% of Ad Spend",
+          period: "whichever is higher",
+          features: [
+            "Meta Ads Management",
+            "Funnel Growth Care",
+            "Monthly Reporting",
+            "Arkquen Growth Plan Included",
+          ],
+        },
+      },
+      {
+        name: "Google Ads + Funnel",
+        tag: "Growth System Package",
+        tagColor: "text-secondary",
+        highlighted: false,
+        price: "₹29,997",
+        period: "one-time setup",
+        features: [
+          { text: "Google Ads Setup", included: true },
+          { text: "Scale Funnel", included: true },
+          { text: "CRM Integration", included: true },
+          { text: "Analytics Setup", included: true },
+          { text: "Tracking Configuration", included: true },
+        ],
+        monthly: {
+          price: "₹34,997/mo or 20% of Ad Spend",
+          period: "whichever is higher",
+          features: [
+            "Google Ads Management",
+            "Funnel Growth Care",
+            "Monthly Reporting",
+            "Arkquen Growth Plan Included",
+          ],
+        },
+      },
+      {
+        name: "Meta + Google Ads + Funnel",
+        tag: "Complete Growth System",
+        tagColor: "text-secondary",
+        highlighted: true,
+        recommended: true,
+        price: "₹34,997",
+        period: "one-time setup",
+        features: [
+          { text: "Meta Ads Setup", included: true },
+          { text: "Google Ads Setup", included: true },
+          { text: "Scale Funnel", included: true },
+          { text: "CRM Integration", included: true },
+          { text: "Automation Setup", included: true },
+          { text: "Conversion Tracking", included: true },
+          { text: "Analytics Configuration", included: true },
+        ],
+        monthly: {
+          price: "₹44,997/mo or 20% of Total Ad Spend",
+          period: "monthly management",
+          features: [
+            "Meta Ads Management",
+            "Google Ads Management",
+            "Funnel Growth Care",
+            "Monthly Strategy Reviews",
+            "Performance Reporting",
+            "Optimization Planning",
+          ],
+        },
+      },
+    ],
   },
 ];
 
@@ -216,6 +403,9 @@ function SinglePlanLayout({ plan, active }) {
           <div>
             <p className={`font-mono text-[10px] uppercase tracking-widest mb-3 ${plan.tagColor}`}>{plan.tag}</p>
             <h2 className="font-headline text-3xl md:text-4xl font-medium text-white">{plan.name}</h2>
+            {plan.description && (
+              <p className="font-body text-sm text-text-muted font-light leading-relaxed mt-4">{plan.description}</p>
+            )}
           </div>
 
           {/* Price */}
@@ -234,6 +424,21 @@ function SinglePlanLayout({ plan, active }) {
               <div className="font-mono text-[9px] text-text-dim uppercase tracking-widest">See full list →</div>
             </div>
           </div>
+
+          {(plan.bestFor || plan.delivery) && (
+            <div className="space-y-3">
+              {plan.bestFor && (
+                <p className="font-mono text-[10px] text-text-muted uppercase tracking-widest leading-relaxed">
+                  <span className={active.accentClass}>Best for:</span> {plan.bestFor}
+                </p>
+              )}
+              {plan.delivery && (
+                <p className="font-mono text-[10px] text-text-muted uppercase tracking-widest">
+                  <span className={active.accentClass}>Delivery:</span> {plan.delivery}
+                </p>
+              )}
+            </div>
+          )}
 
           {/* CTA */}
           <Link
@@ -275,19 +480,19 @@ function SinglePlanLayout({ plan, active }) {
 }
 
 // ── PLAN CARD (used for 2-plan tabs like Funnels) ─────────────────────────
-function PlanCard({ plan, accent, active }) {
+function PlanCard({ plan, active }) {
   const isHighlighted = plan.highlighted;
   return (
     <div
       className={`relative rounded-2xl flex flex-col overflow-hidden anim-card glow-card transition-transform duration-300 hover:-translate-y-1
         ${isHighlighted
-          ? "glass-panel-accent border-t-2 border-primary/60 shadow-[0_0_40px_rgba(0,245,255,0.1)]"
+          ? `glass-panel-accent border-t-2 ${active.borderClass} ${active.glowClass}`
           : "glass-panel border border-white/5"
         }`}
     >
       {plan.recommended && (
-        <div className="absolute top-0 right-0 bg-primary/20 border-b border-l border-primary/30 px-4 py-1.5 rounded-bl-xl">
-          <span className="font-mono text-[9px] text-primary uppercase tracking-widest">Recommended</span>
+        <div className={`absolute top-0 right-0 ${active.bgClass} border-b border-l ${active.borderClass} px-4 py-1.5 rounded-bl-xl`}>
+          <span className={`font-mono text-[9px] ${active.accentClass} uppercase tracking-widest`}>Recommended</span>
         </div>
       )}
 
@@ -296,11 +501,14 @@ function PlanCard({ plan, accent, active }) {
         <div className="mb-8 pb-6 border-b border-white/5">
           <p className={`font-mono text-[10px] uppercase tracking-widest mb-2 ${plan.tagColor}`}>{plan.tag}</p>
           <h3 className="font-headline text-2xl font-medium text-white">{plan.name}</h3>
+          {plan.description && (
+            <p className="font-body text-sm text-text-muted font-light leading-relaxed mt-3">{plan.description}</p>
+          )}
         </div>
 
         {/* Price */}
         <div className="mb-8 pb-6 border-b border-white/5">
-          <span className={`font-headline text-4xl font-medium tracking-tight ${isHighlighted ? "text-primary" : "text-white"}`}>{plan.price}</span>
+          <span className={`font-headline text-4xl font-medium tracking-tight ${isHighlighted ? active.accentClass : "text-white"}`}>{plan.price}</span>
           <div className="mt-1">
             <span className="font-mono text-[10px] text-text-dim uppercase tracking-widest">{plan.period}</span>
           </div>
@@ -310,7 +518,7 @@ function PlanCard({ plan, accent, active }) {
         <ul className="space-y-4 flex-grow mb-8">
           {plan.features.map((f, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className={`material-symbols-outlined text-sm mt-0.5 flex-shrink-0 ${f.included ? (isHighlighted ? "text-primary" : "text-text-muted") : "text-white/10"}`}>
+              <span className={`material-symbols-outlined text-sm mt-0.5 flex-shrink-0 ${f.included ? (isHighlighted ? active.accentClass : "text-text-muted") : "text-white/10"}`}>
                 {f.included ? "check_circle" : "remove_circle"}
               </span>
               <span className={`font-body text-sm leading-relaxed ${f.included ? "text-text-main" : "text-text-dim line-through decoration-white/10"}`}>
@@ -319,6 +527,37 @@ function PlanCard({ plan, accent, active }) {
             </li>
           ))}
         </ul>
+
+        {(plan.bestFor || plan.delivery) && (
+          <div className="space-y-2 mb-8">
+            {plan.bestFor && (
+              <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest leading-relaxed">
+                <span className={isHighlighted ? active.accentClass : "text-white"}>Best for:</span> {plan.bestFor}
+              </p>
+            )}
+            {plan.delivery && (
+              <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest">
+                <span className={isHighlighted ? active.accentClass : "text-white"}>Delivery:</span> {plan.delivery}
+              </p>
+            )}
+          </div>
+        )}
+
+        {plan.monthly && (
+          <div className="mb-8 rounded-xl border border-white/5 bg-white/[0.03] p-5">
+            <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest mb-3">Monthly Management</p>
+            <div className={`font-headline text-xl font-medium leading-tight ${isHighlighted ? active.accentClass : "text-white"}`}>{plan.monthly.price}</div>
+            <p className="font-mono text-[9px] text-text-dim uppercase tracking-widest mt-1 mb-4">{plan.monthly.period}</p>
+            <ul className="space-y-3">
+              {plan.monthly.features.map((feature, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className={`material-symbols-outlined text-sm mt-0.5 flex-shrink-0 ${isHighlighted ? active.accentClass : "text-text-muted"}`}>check_circle</span>
+                  <span className="font-body text-sm leading-relaxed text-text-muted">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* CTA */}
         <Link
@@ -399,7 +638,9 @@ function MaintenanceCard({ data, accentClass, borderClass, bgClass }) {
               <div className={`absolute inset-0 border ${borderClass} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               <div className="absolute inset-0 bg-primary/5 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
             </Link>
-            <p className="font-mono text-[9px] text-text-dim text-center uppercase tracking-widest">Cancel anytime · 30 days notice</p>
+            <p className="font-mono text-[9px] text-text-dim text-center uppercase tracking-widest">
+              {data.note || "Minimum 3 months · billed in advance"}
+            </p>
           </div>
         </div>
 
@@ -413,6 +654,9 @@ export default function Pricing() {
   const [activeTab, setActiveTab] = useState("funnels");
 
   const active = categories.find((c) => c.id === activeTab);
+  const maintenancePlans = active.maintenance
+    ? Array.isArray(active.maintenance) ? active.maintenance : [active.maintenance]
+    : [];
 
   useEffect(() => {
     ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -482,7 +726,7 @@ export default function Pricing() {
         {/* ── TAB STRIP ── */}
         <div className="flex justify-center mb-16 anim-fade-up">
           <div
-            className="flex gap-1 p-1.5 rounded-2xl"
+            className="flex flex-wrap justify-center gap-1 p-1.5 rounded-2xl max-w-full"
             style={{
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.08)",
@@ -548,7 +792,9 @@ export default function Pricing() {
           </div>
           <div>
             <h2 className="font-headline text-2xl md:text-3xl font-medium text-white">{active.label} Plans</h2>
-            <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">One-time build options</p>
+            <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
+              {active.id === "packages" ? "Setup + monthly management bundles" : "One-time build options"}
+            </p>
           </div>
         </div>
 
@@ -556,31 +802,40 @@ export default function Pricing() {
         {active.plans.length === 1 ? (
           <SinglePlanLayout plan={active.plans[0]} active={active} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${active.plans.length >= 3 ? "xl:grid-cols-3" : ""} gap-6 mb-8`}>
             {active.plans.map((plan, i) => (
-              <PlanCard key={i} plan={plan} accent={active.accentColor} active={active} />
+              <PlanCard key={i} plan={plan} active={active} />
             ))}
           </div>
         )}
 
         {/* ── MAINTENANCE CARD ── */}
-        <div className="mb-8">
-          <div className="flex items-center gap-4 mb-6">
-            <div className={`w-8 h-8 rounded-lg ${active.bgClass} border ${active.borderClass} flex items-center justify-center flex-shrink-0`}>
-              <span className={`material-symbols-outlined text-sm ${active.accentClass}`}>autorenew</span>
+        {maintenancePlans.length > 0 && (
+          <div className="mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className={`w-8 h-8 rounded-lg ${active.bgClass} border ${active.borderClass} flex items-center justify-center flex-shrink-0`}>
+                <span className={`material-symbols-outlined text-sm ${active.accentClass}`}>autorenew</span>
+              </div>
+              <div>
+                <p className="font-headline text-lg font-medium text-white">
+                  Monthly Retainer{maintenancePlans.length > 1 ? "s" : ""}
+                </p>
+                <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Ongoing management & optimisation</p>
+              </div>
             </div>
-            <div>
-              <p className="font-headline text-lg font-medium text-white">Monthly Retainer</p>
-              <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">Ongoing management & optimisation</p>
+            <div className="space-y-6">
+              {maintenancePlans.map((plan, i) => (
+                <MaintenanceCard
+                  key={i}
+                  data={plan}
+                  accentClass={active.accentClass}
+                  borderClass={active.borderClass}
+                  bgClass={active.bgClass}
+                />
+              ))}
             </div>
           </div>
-          <MaintenanceCard
-            data={active.maintenance}
-            accentClass={active.accentClass}
-            borderClass={active.borderClass}
-            bgClass={active.bgClass}
-          />
-        </div>
+        )}
 
         <div className="section-divider mx-0 my-16"></div>
 
@@ -591,27 +846,32 @@ export default function Pricing() {
             <h2 className="font-headline text-3xl md:text-4xl font-medium text-white tracking-tighter">FULL SERVICE OVERVIEW</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => { setActiveTab(cat.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                className={`glass-panel glow-card rounded-xl p-6 text-left flex flex-col gap-4 border hover:border-white/15 transition-all duration-300 hover:-translate-y-1 group ${activeTab === cat.id ? cat.borderClass : "border-white/5"}`}
-              >
-                <div className={`w-12 h-12 rounded-xl ${cat.bgClass} border ${cat.borderClass} flex items-center justify-center`}>
-                  <span className={`material-symbols-outlined ${cat.accentClass} text-xl`}>{cat.icon}</span>
-                </div>
-                <div>
-                  <h3 className="font-headline text-base font-medium text-white mb-1">{cat.label}</h3>
-                  <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
-                    {cat.plans.length} plan{cat.plans.length > 1 ? "s" : ""} + maintenance
-                  </p>
-                </div>
-                <span className={`font-mono text-[10px] uppercase tracking-widest flex items-center gap-1.5 transition-colors group-hover:gap-2.5 duration-300 ${activeTab === cat.id ? cat.accentClass : "text-text-dim group-hover:text-white"}`}>
-                  View plans <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </span>
-              </button>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {categories.map((cat) => {
+              const retainerCount = cat.maintenance
+                ? Array.isArray(cat.maintenance) ? cat.maintenance.length : 1
+                : 0;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => { setActiveTab(cat.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                  className={`glass-panel glow-card rounded-xl p-6 text-left flex flex-col gap-4 border hover:border-white/15 transition-all duration-300 hover:-translate-y-1 group ${activeTab === cat.id ? cat.borderClass : "border-white/5"}`}
+                >
+                  <div className={`w-12 h-12 rounded-xl ${cat.bgClass} border ${cat.borderClass} flex items-center justify-center`}>
+                    <span className={`material-symbols-outlined ${cat.accentClass} text-xl`}>{cat.icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-headline text-base font-medium text-white mb-1">{cat.label}</h3>
+                    <p className="font-mono text-[10px] text-text-dim uppercase tracking-widest">
+                      {cat.plans.length} plan{cat.plans.length > 1 ? "s" : ""} {retainerCount > 0 ? `+ ${retainerCount > 1 ? `${retainerCount} retainers` : "retainer"}` : "+ management"}
+                    </p>
+                  </div>
+                  <span className={`font-mono text-[10px] uppercase tracking-widest flex items-center gap-1.5 transition-colors group-hover:gap-2.5 duration-300 ${activeTab === cat.id ? cat.accentClass : "text-text-dim group-hover:text-white"}`}>
+                    View plans <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
